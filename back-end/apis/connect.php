@@ -2,6 +2,7 @@
 $servername = "localhost:3306";
 $username = "admin";
 $password = "Admin12345#";
+$dbname = "iot_car";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
