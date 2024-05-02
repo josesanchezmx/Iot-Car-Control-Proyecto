@@ -1,5 +1,11 @@
 //alert("Hola mundo");
 let adelante =document.getElementById("adelante");
+let atras =document.getElementById("atras");
+let derecha =document.getElementById("derecha");
+let izquierda =document.getElementById("izquierda");
+let detener =document.getElementById("detener");
+
+let mensaje = document.getElementById("mensaje");
 
 function callApi(estatus) {
   // Hacer una petición para un usuario con ID especifico
@@ -11,6 +17,7 @@ function callApi(estatus) {
     .then(function (response) {
       // manejar respuesta exitosa
       console.log(response);
+      mensaje.innerHTML = "Respuesta: <strong> " + response.data;
     })
     .catch(function (error) {
       // manejar error
@@ -22,5 +29,18 @@ function callApi(estatus) {
 }
 
 adelante.addEventListener("click", function () {
-    callApi('f');
+  callApi('f');
 });
+atras.addEventListener("click", function () {
+  callApi('b');
+});
+izquierda.addEventListener("click", function () {
+  callApi('l');
+});
+derecha.addEventListener("click", function () {
+  callApi('r');
+});
+detener.addEventListener("click", function () {
+  callApi('s');
+});
+
