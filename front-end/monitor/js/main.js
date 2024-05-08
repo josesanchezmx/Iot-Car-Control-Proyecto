@@ -11,7 +11,8 @@ function callApiRequest() {
       // manejar respuesta exitosa
       console.log(response);
 
-      let respuestaServidor = response.data =="f"
+      let respuestaServidor =
+        response.data == "f"
       ?"ADELANTE"
       : response.data == "b"
       ? "ATRAS"
