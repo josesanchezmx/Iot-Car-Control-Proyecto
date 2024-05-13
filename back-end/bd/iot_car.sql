@@ -25,9 +25,12 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarDatos` (IN `valorEstatus` VARCHAR(1))   INSERT INTO carStatus (estatus)     VALUES (valorEstatus)$$
+CREATE DEFINER=`admin`@`%` PROCEDURE `InsertarDatos` (IN `valorEstatus` VARCHAR(1))   INSERT INTO carStatus (estatus)     
+VALUES (valorEstatus); 
+$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtieneEstatus` ()   SELECT estatus FROM carstatus ORDER BY id DESC LIMIT 1$$
+CREATE DEFINER=`admin`@`%` PROCEDURE `obtieneEstatus` ()   SELECT estatus FROM carstatus ORDER BY id DESC LIMIT 1;
+$$
 
 DELIMITER ;
 
